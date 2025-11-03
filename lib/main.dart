@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/onboarding_screen/onboarding_screen.dart';
 
 void main() {
   runApp(todo_app());
@@ -9,9 +10,7 @@ class todo_app extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(appBar: AppBar(title: Text("ToDO App"))),
-    );
+    return MaterialApp(home: OnboardingScreen());
   }
 }
 
