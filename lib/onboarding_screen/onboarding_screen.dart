@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:todo_app/login_screen/login_screen.dart';
 
 class onBoarding {
   final String image;
@@ -116,7 +117,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (islast == true) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ),
+                        );
+                      } else {
+                        _controller.nextPage(
+                          duration: const Duration(milliseconds: 400),
+                          curve: Curves.easeInOut,
+                        );
+                      }
+                    },
                     child: Text(
                       "$textonboarding",
                       style: TextStyle(color: Colors.white),
